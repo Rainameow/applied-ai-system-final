@@ -1,0 +1,21 @@
+id,title,artist,genre,mood,energy,tempo_bpm,valence,danceability,acousticness
+1,Blinding Lights,The Weeknd,pop,energetic,0.73,171,0.33,0.51,0.00
+2,As It Was,Harry Styles,pop,happy,0.73,174,0.66,0.52,0.34
+3,Levitating,Dua Lipa,pop,happy,0.83,103,0.92,0.70,0.01
+4,Bad Guy,Billie Eilish,pop,moody,0.43,135,0.56,0.70,0.33
+5,Shape of You,Ed Sheeran,pop,happy,0.65,96,0.93,0.83,0.58
+6,Watermelon Sugar,Harry Styles,pop,happy,0.82,95,0.56,0.55,0.12
+7,Someone Like You,Adele,pop,sad,0.33,135,0.29,0.56,0.89
+8,Stay,The Kid LAROI,pop,sad,0.80,170,0.48,0.59,0.04
+9,Smells Like Teen Spirit,Nirvana,rock,intense,0.91,117,0.39,0.52,0.00
+10,Do I Wanna Know?,Arctic Monkeys,rock,moody,0.69,85,0.41,0.55,0.19
+11,Hotel California,Eagles,rock,relaxed,0.59,147,0.61,0.58,0.02
+12,Take Me Home Country Roads,John Denver,acoustic,happy,0.45,82,0.80,0.44,0.88
+13,Fast Car,Tracy Chapman,acoustic,sad,0.29,104,0.26,0.71,0.68
+14,Perfect,Ed Sheeran,acoustic,romantic,0.45,95,0.17,0.60,0.16
+15,The Night We Met,Lord Huron,indie,sad,0.38,91,0.10,0.44,0.96
+16,Sweater Weather,The Neighbourhood,indie,moody,0.81,124,0.40,0.61,0.05
+17,Sunflower,Post Malone,pop,relaxed,0.48,90,0.91,0.76,0.54
+18,Good 4 U,Olivia Rodrigo,pop,intense,0.66,167,0.67,0.56,0.34
+19,One Dance,Drake,hip-hop,happy,0.63,104,0.39,0.79,0.01
+20,Can't Hold Us,Macklemore & Ryan Lewis,hip-hop,energetic,0.92,146,0.85,0.64,0.03

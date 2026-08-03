@@ -1,0 +1,57 @@
+Loaded songs: 20
+
+Music Recommender Simulation
+Retrieval + weighted scoring + validation
+
+=================================================================
+Profile: High-Energy Pop
+=================================================================
+
+1. Levitating by Dua Lipa
+Score: 6.73
+Because: genre match (+2.0), mood match (+1.0), energy similarity (+1.96), tempo similarity (+0.78), acoustic preference (+0.99)
+
+2. Watermelon Sugar by Harry Styles
+Score: 6.52
+Because: genre match (+2.0), mood match (+1.0), energy similarity (+1.94), tempo similarity (+0.70), acoustic preference (+0.88)
+
+3. As It Was by Harry Styles
+Score: 5.93
+Because: genre match (+2.0), mood match (+1.0), energy similarity (+1.76), tempo similarity (+0.51), acoustic preference (+0.66)
+
+4. Shape of You by Ed Sheeran
+Score: 5.73
+Because: genre match (+2.0), mood match (+1.0), energy similarity (+1.60), tempo similarity (+0.71), acoustic preference (+0.42)
+
+5. Stay by The Kid LAROI
+Score: 5.41
+Because: genre match (+2.0), energy similarity (+1.90), tempo similarity (+0.55), acoustic preference (+0.96)
+
+Profile: Chill Lofi
+Input validation failed:
+- Genre 'lofi' is not in the catalog.
+- Mood 'chill' is not in the catalog.
+
+=================================================================
+Profile: Intense Rock
+=================================================================
+
+1. Smells Like Teen Spirit by Nirvana
+Score: 6.54
+Because: genre match (+2.0), mood match (+1.0), energy similarity (+1.92), tempo similarity (+0.62), acoustic preference (+1.00)
+
+2. Hotel California by Eagles
+Score: 5.18
+Because: genre match (+2.0), energy similarity (+1.28), tempo similarity (+0.92), acoustic preference (+0.98)
+
+3. Do I Wanna Know? by Arctic Monkeys
+Score: 4.59
+Because: genre match (+2.0), energy similarity (+1.48), tempo similarity (+0.30), acoustic preference (+0.81)
+
+4. Good 4 U by Olivia Rodrigo
+Score: 3.96
+Because: mood match (+1.0), energy similarity (+1.42), tempo similarity (+0.88), acoustic preference (+0.66)
+
+5. Can't Hold Us by Macklemore & Ryan Lewis
+Score: 3.82
+Because: energy similarity (+1.94), tempo similarity (+0.91), acoustic preference (+0.97)

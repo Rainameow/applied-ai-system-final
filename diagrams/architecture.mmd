@@ -1,0 +1,29 @@
+flowchart TD
+    A[User Preferences] --> B[Input Validation]
+    B -->|Valid| C[Music Catalog]
+    B -->|Invalid| X[Safe Error Message]
+
+    C --> D[Retrieval]
+    D --> E[Feature Scoring]
+
+    E --> F[Genre Match]
+    E --> G[Mood Match]
+    E --> H[Energy Similarity]
+    E --> I[Tempo Similarity]
+    E --> J[Acoustic Preference]
+
+    F --> K[Final Score]
+    G --> K
+    H --> K
+    I --> K
+    J --> K
+
+    K --> L[Rank Songs]
+    L --> M[Top 5 Recommendations]
+
+    M --> N[Explanation]
+    N --> O[User]
+
+    P[Automated Tests] --> K
+    P --> D
+    P --> B
