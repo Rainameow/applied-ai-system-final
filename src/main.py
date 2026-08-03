@@ -1,55 +1,77 @@
-"""
-Music Recommender Simulation
-
-A content-based music recommendation system
-with retrieval, transparent scoring, validation,
-and reliability testing.
-"""
-
-from src.recommender import (
-    load_songs,
-    recommend_songs
-)
-
-from src.validation import (
-    validate_preferences
-)
+from src.recommender import load_songs, recommend_songs
+from src.validation import validate_preferences
 
 
-USER_PROFILES = {
+def get_user_preferences():
+    print("\nMusic Recommender")
+    print("=" * 40)
 
-    "High-Energy Pop": {
-        "genre": "pop",
-        "mood": "happy",
-        "energy": 0.85,
-        "tempo_bpm": 125,
-        "likes_acoustic": False,
-    },
+    genre = input(
+        "What genre do you want? "
+    ).strip().lower()
 
-    "Chill Lofi": {
-        "genre": "lofi",
-        "mood": "chill",
-        "energy": 0.35,
-        "tempo_bpm": 75,
-        "likes_acoustic": True,
-    },
+    mood = input(
+        "What mood do you want? "
+    ).strip().lower()
 
-    "Intense Rock": {
-        "genre": "rock",
-        "mood": "intense",
-        "energy": 0.95,
-        "tempo_bpm": 155,
-        "likes_acoustic": False,
-    },
-}
+    while True:
+        try:
+            energy = float(
+                input("Energy level (0.0 - 1.0): ")
+            )
+
+            if 0.0 <= energy <= 1.0:
+                break
+
+            print("Please enter a value between 0.0 and 1.0.")
+
+        except ValueError:
+            print("Please enter a number.")
+
+    while True:
+        try:
+            tempo = float(
+                input("Target tempo in BPM (40 - 220): ")
+            )
+
+            if 40 <= tempo <= 220:
+                break
+
+            print("Please enter a tempo between 40 and 220.")
+
+        except ValueError:
+            print("Please enter a number.")
+
+    while True:
+        acoustic = input(
+            "Do you like acoustic songs? (yes/no): "
+        ).strip().lower()
+
+        if acoustic in ["yes", "y"]:
+            likes_acoustic = True
+            break
+
+        if acoustic in ["no", "n"]:
+            likes_acoustic = False
+            break
+
+        print("Please enter yes or no.")
+
+    return {
+        "genre": genre,
+        "mood": mood,
+        "energy": energy,
+        "tempo_bpm": tempo,
+        "likes_acoustic": likes_acoustic,
+    }
 
 
-def display_recommendations(
-    profile_name: str,
-    user_prefs: dict,
-    songs: list
-) -> None:
-    """Display recommendations for one profile."""
+def main():
+    songs = load_songs("data/songs.csv")
+
+    print(f"\nLoaded songs: {len(songs)}")
+
+    user_prefs = get_user_preferences()
 
     errors = validate_preferences(
         user_prefs,
@@ -57,20 +79,9 @@ def display_recommendations(
     )
 
     if errors:
-
-        print(
-            f"\nProfile: {profile_name}"
-        )
-
-        print(
-            "Input validation failed:"
-        )
-
+        print("\nInput validation failed:")
         for error in errors:
-            print(
-                f"- {error}"
-            )
-
+            print(f"- {error}")
         return
 
     recommendations = recommend_songs(
@@ -79,72 +90,20 @@ def display_recommendations(
         k=5
     )
 
-    print(
-        "\n"
-        + "=" * 65
-    )
+    print("\n" + "=" * 60)
+    print("YOUR RECOMMENDATIONS")
+    print("=" * 60)
 
-    print(
-        f"Profile: {profile_name}"
-    )
-
-    print(
-        "=" * 65
-    )
-
-    for number, (
-        song,
-        score,
-        explanation
-    ) in enumerate(
+    for i, (song, score, reasons) in enumerate(
         recommendations,
         start=1
     ):
-
         print(
-            f"\n{number}. "
-            f"{song['title']} "
+            f"\n{i}. {song['title']} "
             f"by {song['artist']}"
         )
-
-        print(
-            f"Score: {score:.2f}"
-        )
-
-        print(
-            f"Because: {explanation}"
-        )
-
-
-def main() -> None:
-    """Load the catalog and test profiles."""
-
-    songs = load_songs(
-        "data/songs.csv"
-    )
-
-    print(
-        f"Loaded songs: {len(songs)}"
-    )
-
-    print(
-        "\nMusic Recommender Simulation"
-    )
-
-    print(
-        "Retrieval + weighted scoring + validation"
-    )
-
-    for (
-        profile_name,
-        user_prefs
-    ) in USER_PROFILES.items():
-
-        display_recommendations(
-            profile_name,
-            user_prefs,
-            songs
-        )
+        print(f"Score: {score}")
+        print(f"Because: {reasons}")
 
 
 if __name__ == "__main__":
